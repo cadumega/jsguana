@@ -8,7 +8,6 @@ header {
   text-align: center;
 }
 
-
 section {
   background: whitesmoke;
   border-radius: 10px;
@@ -18,9 +17,14 @@ section {
   box-shadow: 3px 5px 10px lightslategray;
 }
 
+div {
+  text-align: center;
+  padding: 8px;
+}
+
 footer {
-  color: white;
+  color: whitesmoke;
   text-align: center;
   font-style: italic;
-
 }
+
