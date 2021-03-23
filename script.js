@@ -9,20 +9,47 @@ function verificar () {               // adicionando método verificar
     var fsex = document.getElementsByName('radsex')            //window.alert(`tudo ok`)        //  micro validação
     var idade = ano - Number (fano.value)
     var genero = ''                               //res.innerHTML = `Idade calculada: ${idade}`   //teste
+    var img = document.createElement ('img')
+    img.setAttribute ('id' ,'foto' )            // criando dinamicamente, já no html <img id ='foto'
     if(fsex[0].checked) {
       genero = 'Homem'
-    } else if (fsex[1].checked) {
-      genero = 'Mulher'
-    }
+
+        if (idade >=0 && idade <10 ) {
+          // Criança
+          img.setAttribute('src', 'arqs/foto-bebe-m.png')
+        } else if (idade < 21) {
+          // Jovem
+          img.setAttribute('src', 'arqs/foto-jovem-m.png')
+        }else if (idade < 55) {
+          // Adulto
+          img.setAttribute('src', 'arqs/foto-adulto-m.png')
+        }else {
+          // Idoso
+          img.setAttribute('src', 'arqs/foto-idoso-m.png')
+        }
+
+      } else if (fsex[1].checked) {
+        genero = 'Mulher'
+
+        if (idade >=0 && idade <10 ) {
+          // Criança
+          img.setAttribute('src', 'arqs/foto-bebe-f.png')
+        } else if (idade < 21) {
+          // Jovem
+          img.setAttribute ('src','arqs/foto-jovem-f.png')
+        }else if (idade < 55) {
+          // Adulto
+          img.setAttribute ('src','arqs/foto-adulto-f.png')
+        }else {
+          // Idoso
+          img.setAttribute ('src','arqs/foto-idoso-f.png')
+        }
+      } 
+
     res.getElementsByClassName.textAlign= 'center'
     res.innerHTML = `Detectamos ${genero} com ${idade} anos.`
-  }
+    res.appendChild(img)  //adicionar elemento
+    }
 
 }
 
-//se fano.value.length == 0 se a pessoa não digitou o ano, ou então fano.value > ano vou dar a msg...
-
-// toda vez que vc apertar em verificar, vai aparecer um img, uma em baixo da outra, ai pra evitar isso, fiz o seguinte, coloquei um id no input button, e no js ficou assim: 
-// var recarregar = document.getElementById('recarregar')
-// recarregar.value = ' '
-// no caso zerei o valor de input, ai ele não aparece mais
