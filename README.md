@@ -1,7 +1,9 @@
 # jsguana
  Javascript com Guanabara
 
-Uso do DOM 
+Criando um Verificador de Idade-Gênero.
+
+Linguagens utilizadas: html,css,javascript
 
 
 
